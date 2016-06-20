@@ -1,0 +1,7 @@
+Inside the directory run:
+
+docker-compose up -d
+
+Run the following to perform migrations:
+
+docker run -it --rm --link flyway_postgres_1 -v `pwd`:/flyway/sql flyway_flyway migrate

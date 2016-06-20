@@ -1,0 +1,14 @@
+---
+postgres:
+  image: postgres:9.5
+  environment:
+    POSTGRES_PASSWORD: mysecretpassword
+    POSTGRES_USER: postgres
+  restart: always
+  ports:
+   - '5432:5432'
+
+flyway:
+  build: .
+  links:
+   - postgres
