@@ -4,11 +4,13 @@ postgres:
   environment:
     POSTGRES_PASSWORD: mysecretpassword
     POSTGRES_USER: postgres
+    POSTGRES_DB: flyway
+   
   restart: always
   ports:
    - '5432:5432'
 
 flyway:
-  build: .
+  image: addteq/flyway
   links:
    - postgres

@@ -4,4 +4,4 @@ docker-compose up -d
 
 Run the following to perform migrations:
 
-docker run -it --rm --link flyway_postgres_1 -v `pwd`:/flyway/sql flyway_flyway migrate
+ocker run -it --rm --link flywaypostgres_postgres_1 -v `pwd`:/flyway/sql addteq/flyway -url=jdbc:postgresql://flywaypostgres_postgres_1:5432/flyway -user=postgres -password=mysecretpassword migrate
