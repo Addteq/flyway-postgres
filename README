@@ -1,0 +1,7 @@
+Inside the directory run:
+
+docker-compose up -d
+
+Run the following to perform migrations:
+
+docker-compose run --rm flyway -url=jdbc:postgresql://postgres:5432/flyway -user=postgres -password=mysecretpassword migrate

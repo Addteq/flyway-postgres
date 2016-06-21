@@ -1,0 +1,17 @@
+---
+version: '2'
+services:
+ postgres:
+   image: postgres:9.5
+   environment:
+     POSTGRES_PASSWORD: mysecretpassword
+     POSTGRES_USER: postgres
+     POSTGRES_DB: flyway
+   restart: always
+
+ flyway:
+   image: addteq/flyway
+   depends_on:
+    - postgres
+   volumes:
+    - .:/flyway/sql
